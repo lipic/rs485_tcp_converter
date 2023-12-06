@@ -1,7 +1,6 @@
 {
   "urls": [
-    ["mlx90640/__init__.py", "github:org/micropython-mlx90640/mlx90640/__init__.py"]
-
+    ["main/config.py", "github:org/rs485_tcp_converter/main/__config__.py"]
   ],
   "deps": [
     ["collections-defaultdict", "latest"],
