@@ -2,9 +2,5 @@
   "urls": [
     ["main/config.py", "github:lipic/rs485_tcp_converter/main/__config__.py"]
   ],
-  "deps": [
-    ["collections-defaultdict", "latest"],
-    ["os-path", "latest"]
-  ],
   "version": "0.2"
 }
