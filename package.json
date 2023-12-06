@@ -1,6 +1,6 @@
 {
   "urls": [
-    ["main/config.py", "github:org/rs485_tcp_converter/main/__config__.py"]
+    ["main/config.py", "github:lipic/rs485_tcp_converter/main/__config__.py"]
   ],
   "deps": [
     ["collections-defaultdict", "latest"],
