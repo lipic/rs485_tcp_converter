@@ -1,6 +1,6 @@
 {
   "urls": [
-    ["main/config.py", "github:lipic/rs485_tcp_converter/main/__config__.py"]
+    ["config.py", "github:lipic/rs485_tcp_converter/main/__config__.py"]
   ],
   "version": "0.2"
 }
