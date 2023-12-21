@@ -6,20 +6,21 @@ import os
 class Config:
 
     def __init__(self):
-        self.boot = bootloader.Bootloader('https://github.com/lipic/bcbox_tst', "")
         self.setting_profiles: str = 'setting.dat'
         self.config = OrderedDict()
-        self.config['reset'] = '0'
-        self.config['automatic_update'] = '1'
-        self.config['actual_sw_version'] = '0'
-        self.config['testing_software'] = '0'
-        self.config['errors'] = '0'
-        self.config['id'] = '0'
-        self.config['wi-fi_ap'] = '0'
-        self.config['factory_reset'] = '0'
-        self.config['wifi_status'] = '0'
-        self.handle_configure('actual_sw_version', self.boot.get_version(""))
+        self.config['reset']: str = '0'
+        self.config['automatic_update']: str = '1'
+        self.config['actual_sw_version']: str = '0'
+        self.config['testing_software']: str = '0'
+        self.config['errors']: str = '0'
+        self.config['id']: str = '0'
+        self.config['factory_reset']: str = '0'
+        self.config['wifi_status']: str = '0'
+        self.config['inverter_type']: str = '0'
+        self.loading_wifi: bool = False
         self.get_config()
+        self.boot = bootloader.Bootloader('https://github.com/lipic/rs485_tcp_converter', "") if self.config['testing_software'] == '1' else bootloader.Bootloader('https://github.com/lipic/rs485_tcp_converter_tst', "")
+        self.handle_configure('actual_sw_version', self.boot.get_version(""))
 
     def factory_reset(self) -> None:
         self.config = OrderedDict()
@@ -29,7 +30,6 @@ class Config:
         self.config['testing_software'] = '0'
         self.config['errors'] = '0'
         self.config['id'] = '0'
-        self.config['wi-fi_ap'] = '0'
         self.config['factory_reset'] = '0'
         self.config['wifi_status'] = '0'
         self.handle_configure('actual_sw_version', self.boot.get_version(""))
